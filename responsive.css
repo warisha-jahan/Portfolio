@@ -1,0 +1,179 @@
+/* Mobile Screen  */
+
+@media (max-width:767px) {
+    header {
+        height: 100vh;
+    }
+   
+    .humberger {
+        display: flex;
+        padding: 20px;
+    }
+    .humberger.active span:nth-child(1) {
+        transform: rotate(45deg);
+        transform-origin: 5% 5%;
+    }
+    
+    .humberger.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .humberger.active span:nth-child(3) {
+        transform: rotate(-45deg);
+        transform-origin: 5% 95%;
+    }
+    
+
+    nav .menu {
+       visibility: hidden;
+        background-color: #fda400;
+        position: absolute;
+        opacity: 0;
+        height: 50vh;
+        width: 50vw;
+        z-index: 999;
+        border-radius: 50px ;
+        transition: opacity 1s ease-in-out;
+        box-shadow: 2px 4px 8px 2px #f7b538;
+        animation: zoomIn 1s infinite ease-in-out alternate;
+       
+    }
+    
+    nav .menu a {
+        color:#3f000c;
+        margin: 30px 20px;
+        font-weight: bold;
+        font-size: 15px;
+        text-align: center;
+    }
+    
+    nav .menu.active {
+        opacity: 1;
+        visibility: visible;
+        top:100px; 
+       
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        
+        
+    }
+
+    @keyframes zoomIn {
+        0%{
+           
+            transform: scale(1);
+        }
+        100%{
+          
+            transform: scale(1.1);
+        }
+    }
+
+    .hero-container {
+        flex-direction: column;
+    }
+
+    .content-side {
+        color: white;
+        margin-right: 40%;
+        padding: 20px;
+
+    }
+
+    .content-side h1 {
+        font-size: 30px;
+    }
+
+    .content-side h2,
+    h3 {
+        font-size: 15px;
+    }
+
+    .content-side p {
+        margin: 15px 0px;
+        font-size: 12px;
+        padding-right: 50%;
+
+    }
+
+    .content-side button {
+        padding: 5px 20px;
+        background: #f7b538;
+        font-size: 12px;
+
+
+    }
+
+    #header-img img {
+        max-width: 40%;
+        opacity: 0.8;
+
+    }
+
+}
+@Media (min-width:768px) and (max-width:1023px) {
+
+    header {
+        height: 62vh;
+    }
+    .logo{
+        margin-top: 20px;
+    }
+    .logo img{
+        padding: 40px 0px;
+        width: 20%;
+    }
+
+   
+
+    .hero-container {
+        justify-content: space-around;
+    }
+
+    .menu {
+        display: none;
+    }
+
+    .content-side {
+        padding-left: 50px;
+    }
+
+    .content-side h1 {
+        font-size: 30px;
+    }
+
+    .content-side h2,
+    h3 {
+        font-size: 17px;
+    }
+
+    .content-side p {
+        font-size: 12px;
+
+
+    }
+
+    .content-side button {
+        padding: 5px 25px;
+        background: #f7b538;
+        font-size: 12px;
+
+
+    }
+
+    #header-img {
+        padding-right:10%;
+    }
+
+    #header-img img {
+        max-width: 70%;
+        opacity: 0.8;
+
+
+
+
+
+    }
+}
