@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +13,8 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="responsive.css">
+    <link rel="stylesheet" href="lightbox.css">
+    
 </head>
 
 <body>
@@ -25,11 +28,11 @@
                 <span></span>
             </div>
             <div class="menu" id="menu">
-                <a href="">Home</a>
-                <a href="">About</a>
-                <a href="">Services</a>
-                <a href="">Portfolio</a>
-                <a href="">Contact</a>
+                <a href="#">Home</a>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#portfolio">Portfolio</a>
+                <a href="#contact">Contact</a>
             </div>
         </nav>
 
@@ -59,7 +62,7 @@
     </header>
 
     <main>
-        <section class="aboutMe">
+        <section class="aboutMe" id="about">
             <div class="container-width section">
                 <img src="Media/header-img.webp" alt="">
                 <div class="content-side">
@@ -69,64 +72,90 @@
                         a tenetur vitae libero ex hic ducimus odio quae quibusdam laborum perferendis, repellendus ab
                         aliquam numquam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt illo repudiandae
                         nobis dicta illum nihil fugiat vitae nemo porro enim.</p>
-                    <button class="animate__animated animate__fadeInUp"><a href="">Read More</a></button>
+                    <button class="animate__animated animate__fadeInUp"><a href="#contact">Contact Me</a></button>
                 </div>
 
             </div>
 
         </section>
 
-        <section class="Services">
+        <section class="Services" id="services">
             <div class="container-width">
                 <h2>My <span>Services</span></h2>
                 <div class="services-card">
                     <div class="card">
-                        <img src="Media/code.png" >
+                        <img src="Media/code.png">
                         <h3>Custom Website Development</h3>
                         <p>ailored websites built to meet your specific needs and preferences.</p>
                     </div>
                     <div class="card">
-                        <img src="Media/code.png" >
+                        <img src="Media/code.png">
                         <h3>Custom Website Development</h3>
                         <p>ailored websites built to meet your specific needs and preferences.</p>
                     </div>
                     <div class="card">
-                        <img src="Media/code.png" >
+                        <img src="Media/code.png">
                         <h3>Custom Website Development</h3>
                         <p>ailored websites built to meet your specific needs and preferences.</p>
                     </div>
-                   
+
                 </div>
             </div>
 
         </section>
 
-        <section class="Portfolio">
-                <div class="portfolio-grid-container">
-                    <h2>Latest <span>Projects</span></h2>
-                    <div class="projects">
-                        <div class="project-card"><img src="Media/project (7).avif"></div>
-                        <div class="project-card"><img src="Media/project (2).avif"></div>
-                        <div class="project-card"><img src="Media/project (3).avif"></div>
-                        <div class="project-card"><img src="Media/project (4).avif"></div>
-                        <div class="project-card"><img src="Media/project (5).avif"></div>
-                        <div class="project-card"><img src="Media/project (6).avif"></div>
-                        <div class="project-card"><img src="Media/project (8).avif"></div>
-                        <div class="project-card"><img src="Media/project (9).avif"></div>
-                    </div>
+        <section class="Portfolio" id="portfolio">
+            <div class="portfolio-grid-container">
+                <h2>Latest <span>Projects</span></h2>
+                <div class="projects">
+                 
+                    <a href="Media/project (6).avif" class="project-card" data-lightbox="models" data-title="Recent Project">
+                        <img src="Media/project (6).avif">
+                    </a>
+                    <a href="Media/project (7).avif" class="project-card" data-lightbox="models" data-title="Recent Project">
+                        <img src="Media/project (7).avif">
+                    </a>
+                    <a href="Media/project (6).avif" class="project-card" data-lightbox="models" data-title="Recent Project">
+                        <img src="Media/project (6).avif">
+                    </a>
+                    <a href="Media/project (7).avif" class="project-card" data-lightbox="models" data-title="Recent Project">
+                        <img src="Media/project (7).avif">
+                    </a>
+                    <a href="Media/project (6).avif" class="project-card" data-lightbox="models" data-title="Recent Project">
+                        <img src="Media/project (6).avif">
+                    </a>
+                    <a href="Media/project (7).avif" class="project-card" data-lightbox="models" data-title="Recent Project">
+                        <img src="Media/project (7).avif">
+                    </a>
+                    <a href="Media/project (6).avif" class="project-card" data-lightbox="models" data-title="Recent Project">
+                        <img src="Media/project (6).avif">
+                    </a>
+                    <a href="Media/project (7).avif" class="project-card" data-lightbox="models" data-title="Recent Project">
+                        <img src="Media/project (7).avif">
+                    </a>
+                  
                 </div>
+            </div>
         </section>
-        <section class="contactMe container">
-                <h2>Contact <span>Me</span></h2>
-                <form action="">
-                    <input type="text" placeholder="First Name">
-                    <input type="text" placeholder="Last Name">
-                    <textarea name="message" id="message" cols="30" rows="10"></textarea>
-                    <button type="submit">Submit</button>
-                </form>
+        <section class="contactMe container" id="contact">
+            <h2>Contact <span>Me</span></h2>
+            <form action="">
+                <input type="text" placeholder="First Name">
+                <input type="text" placeholder="Last Name">
+                <input type="email" placeholder="Email">
+                <input type="number" placeholder="Phone Number">
+                <textarea name="message" id="message" cols="30" rows="10" placeholder="Write Message"></textarea>
+                <button type="submit">Send Message</button>
+            </form>
         </section>
     </main>
+    <footer>
+        <p>&copy; <span id="year"></span> WarishaMJ All Rights Reserved.</p>
+        <a href="#"><img src="Media/arrow.png" class="animate__animated animate__fadeInUp"></a>
+    </footer>
     <script src="close.js"></script>
+    <script src="lightbox-plus-jquery.min.js"></script>
+    <script src="currentyear.js"></script>
 
 </body>
 
