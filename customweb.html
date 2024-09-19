@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
     <link rel="stylesheet" href="responsive.css">
     <link rel="stylesheet" href="lightbox.css">
+    <link rel="stylesheet" href="modal.css">
     <style>
         .content-side h1 {
             font-size: 45px;
@@ -44,7 +45,110 @@
             margin: 20px 0px;
         }
 
-        footer{
+        /* Hidden From */
+        .contactMe {
+            height: 600px;
+            background-color: #272727;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            z-index: 1;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+          display: none;
+        }
+
+        .container h2 {
+            color: #f7b538;
+            font-size: 45px;
+        }
+
+        .container span {
+            color: #f7b538;
+        }
+
+        form {
+            display: grid;
+            grid-template-columns: repeat(2, 250px);
+            grid-gap: 5px;
+            margin: 20px 0px;
+            background-color: #000000;
+            padding: 50px;
+
+        }
+
+        form input {
+            padding: 20px 15px;
+            border: none;
+            border-radius: 5px;
+
+
+        }
+
+
+
+        form textarea {
+            grid-column: 1/3;
+            padding: 20px 15px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        form textarea::placeholder,
+        form input::placeholder {
+            position: relative;
+            transition: top 0.3s ease;
+            top: 0;
+            margin: 40px 0px;
+        }
+
+        form textarea:focus::placeholder,
+        form input:focus::placeholder {
+            top: -11px;
+            font-size: 11px;
+        }
+
+        form button {
+            margin: 10px auto;
+            grid-column: 1/3;
+            padding: 10px 25px;
+            border-radius: 20px;
+            border: none;
+            background: #f7b538;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 1px 1px 5px 3px #f7b538, -1px -1px 5px #f7b538;
+        }
+
+        form button:hover {
+            box-shadow: 1px 1px 20px 5px #f7b538, -1px -1px 5px #f7b538;
+        }
+
+        .form-top-bar {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+            gap: 30px;
+        }
+
+        .form-top-bar .close {
+            
+                color: #f7b538;
+                float: right;
+                font-size: 50px;
+                font-weight: bold;
+                cursor: pointer;
+        
+        }
+
+        .form-top-bar .close:hover{
+            color: white;
+        }
+
+        footer {
             background-color: #3f000c;
         }
     </style>
@@ -99,7 +203,7 @@
                 <h2>Pricing <span>Plans</span></h2>
                 <div class="services-card">
 
-                    <div class="card">
+                    <div class="card price-card">
                         <img src="Media/code.png">
                         <h3>Basic Plan: <span>$300</span></h3>
                         <ul>
@@ -111,7 +215,7 @@
                         </ul>
                     </div>
 
-                    <div class="card">
+                    <div class="card price-card">
 
                         <img src="Media/code.png">
                         <h3>Standard Plan: <span>$600</span></h3>
@@ -125,7 +229,7 @@
                     </div>
 
 
-                    <div class="card">
+                    <div class="card price-card">
 
                         <img src="Media/code.png">
                         <h3>Premium Plan: <span>$1,000</span></h3>
@@ -137,7 +241,7 @@
                             <li>5 Revisions</li>
                         </ul>
                     </div>
-                    <div class="card">
+                    <div class="card price-card">
 
                         <img src="Media/code.png">
                         <h3>Ultimate Plan: <span>$2,000</span></h3>
@@ -153,16 +257,35 @@
 
                 </div>
             </div>
+        </section>
+        <!-- Hidden Modal -->
+        <section class="contactMe container modal" id="contact modal">
+            <div class="form-top-bar">
+                <h2>Contact <span>Me</span></h2>
+                <div class="close">&times;</div>
+            </div>
 
+
+            <form action="">
+                
+                <input type="text" placeholder="First Name">
+                <input type="text" placeholder="Last Name">
+                <input type="email" placeholder="Email">
+                <input type="number" placeholder="Phone Number">
+                <textarea name="message" id="message" cols="30" rows="10" placeholder="Write Message"></textarea>
+                <button type="submit">Send Message</button>
+            </form>
         </section>
     </main>
     <footer>
         <p>&copy; <span id="year"></span> WarishaMJ All Rights Reserved.</p>
         <a href="#"><img src="Media/arrow.png" class="animate__animated animate__fadeInUp"></a>
     </footer>
+    <script src="modal.js"></script>
     <script src="close.js"></script>
     <script src="lightbox-plus-jquery.min.js"></script>
     <script src="currentyear.js"></script>
+   
 
 </body>
 
