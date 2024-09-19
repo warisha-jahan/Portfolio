@@ -15,6 +15,16 @@
     <link rel="stylesheet" href="responsive.css">
     <link rel="stylesheet" href="lightbox.css">
     <link rel="stylesheet" href="modal.css">
+
+
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("_5OltJ1IQHainEfe4"); 
+        })();
+    </script>
+
     <style>
         .content-side h1 {
             font-size: 45px;
@@ -48,7 +58,8 @@
         /* Hidden From */
         .contactMe {
             height: 600px;
-            background-color: #272727;
+            display: flex;
+            background-color: #4e0110c2;
             flex-direction: column;
             align-items: center;
             justify-content: center;
@@ -57,7 +68,7 @@
             inset: 0;
             width: 100%;
             height: 100%;
-          display: none;
+            visibility: hidden;
         }
 
         .container h2 {
@@ -74,7 +85,7 @@
             grid-template-columns: repeat(2, 250px);
             grid-gap: 5px;
             margin: 20px 0px;
-            background-color: #000000;
+            background-color: #3f000c;
             padding: 50px;
 
         }
@@ -135,16 +146,16 @@
         }
 
         .form-top-bar .close {
-            
-                color: #f7b538;
-                float: right;
-                font-size: 50px;
-                font-weight: bold;
-                cursor: pointer;
-        
+
+            color: #f7b538;
+            float: right;
+            font-size: 50px;
+            font-weight: bold;
+            cursor: pointer;
+
         }
 
-        .form-top-bar .close:hover{
+        .form-top-bar .close:hover {
             color: white;
         }
 
@@ -203,7 +214,7 @@
                 <h2>Pricing <span>Plans</span></h2>
                 <div class="services-card">
 
-                    <div class="card price-card">
+                    <div class="card price-card" id="basic">
                         <img src="Media/code.png">
                         <h3>Basic Plan: <span>$300</span></h3>
                         <ul>
@@ -215,7 +226,7 @@
                         </ul>
                     </div>
 
-                    <div class="card price-card">
+                    <div class="card price-card" id="standard">
 
                         <img src="Media/code.png">
                         <h3>Standard Plan: <span>$600</span></h3>
@@ -229,7 +240,7 @@
                     </div>
 
 
-                    <div class="card price-card">
+                    <div class="card price-card" id="premium">
 
                         <img src="Media/code.png">
                         <h3>Premium Plan: <span>$1,000</span></h3>
@@ -241,7 +252,7 @@
                             <li>5 Revisions</li>
                         </ul>
                     </div>
-                    <div class="card price-card">
+                    <div class="card price-card" id="ultimate">
 
                         <img src="Media/code.png">
                         <h3>Ultimate Plan: <span>$2,000</span></h3>
@@ -266,15 +277,32 @@
             </div>
 
 
-            <form action="">
-                
-                <input type="text" placeholder="First Name">
-                <input type="text" placeholder="Last Name">
-                <input type="email" placeholder="Email">
-                <input type="number" placeholder="Phone Number">
-                <textarea name="message" id="message" cols="30" rows="10" placeholder="Write Message"></textarea>
+            <form id="contact-form">
+                <input type="text" name="first_name" placeholder="First Name" required>
+                <input type="text" name="last_name" placeholder="Last Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="number" name="phone" placeholder="Phone Number" required>
+                <textarea name="message" cols="30" rows="10" placeholder="Write Message" required></textarea>
                 <button type="submit">Send Message</button>
             </form>
+            
+            <script type="text/javascript">
+                document.getElementById('contact-form').addEventListener('submit', function(event) {
+                    event.preventDefault(); // Prevent the form from submitting normally
+            
+                    // Send form data via EmailJS
+                    emailjs.sendForm('service_rurc8qc', 'template_fjsnu9d', this)
+                        .then(function() {
+                            alert('Message sent successfully!');
+                        }, function(error) {
+                            alert('Failed to send message. Error: ' + JSON.stringify(error));
+                        });
+                });
+            </script>
+
+
+
+
         </section>
     </main>
     <footer>
@@ -282,10 +310,11 @@
         <a href="#"><img src="Media/arrow.png" class="animate__animated animate__fadeInUp"></a>
     </footer>
     <script src="modal.js"></script>
+
     <script src="close.js"></script>
     <script src="lightbox-plus-jquery.min.js"></script>
     <script src="currentyear.js"></script>
-   
+    <!-- <script src="form.js"></script> -->
 
 </body>
 
