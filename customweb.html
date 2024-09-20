@@ -79,7 +79,7 @@
 
 
         .container h2 {
-            color: #f7b538;
+            color: #ffffff;
             font-size: 45px;
         }
 
@@ -307,14 +307,16 @@
 
                             // Display the alert
                             document.getElementById('custom-alert').style.display = 'flex';
-
+                           
+                          
                             // // Close the alert when clicking the close button or OK button
                             document.getElementById('close-btn').onclick = function () {
                                 document.getElementById('custom-alert').style.display = 'none';
-                            };
+                            }
 
                             document.getElementById('confirmation').onclick = function () {
                                 document.getElementById('custom-alert').style.display = 'none';
+                              
                             };
                         }, function (error) {   /*Error Alert*/
 

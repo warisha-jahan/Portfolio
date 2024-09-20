@@ -402,7 +402,7 @@ footer img {
     justify-content: center;
     align-items: flex-start;
     background-color: #4e01107d;
-    
+  
    
 
 }
@@ -415,6 +415,8 @@ footer img {
     box-shadow: 2px 2px 8px grey;
     position: relative;
     margin: 20px 0px;
+    border-radius: 20px;
+ 
 }
 .alert-message{
     font-size: 18px;
@@ -426,6 +428,8 @@ footer img {
     font-size: 28px;
     cursor: pointer;
 }
+
+
 
 #confirmation {
     position: absolute;
@@ -439,4 +443,8 @@ footer img {
     background-color: #4e0110;
     color: white;
     font-size: 11px;
+}
+
+#confirmation:hover{
+    background-color: #7c0119;
 }
