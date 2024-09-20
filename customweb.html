@@ -23,6 +23,8 @@
         (function () {
             emailjs.init("_5OltJ1IQHainEfe4"); 
         })();
+
+        
     </script>
 
     <style>
@@ -69,7 +71,12 @@
             width: 100%;
             height: 100%;
             visibility: hidden;
+           
+            transform: scale(0.3);
+            opacity: 0;
+            transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),transform 0.4s ease-in-out;
         }
+       
 
         .container h2 {
             color: #f7b538;
@@ -87,6 +94,7 @@
             margin: 20px 0px;
             background-color: #3f000c;
             padding: 50px;
+            border-radius: 60px;
 
         }
 
@@ -170,7 +178,7 @@
     <header>
 
         <nav>
-            <div class="logo"><img src="Media/logo.png" alt=""></div>
+           <div class="logo"> <a href="index.html"> <img src="Media/logo.png" alt=""></a></div>
             <div class="humberger" id="humberger">
                 <span></span>
                 <span></span>
