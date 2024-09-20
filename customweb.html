@@ -21,10 +21,10 @@
 
     <script type="text/javascript">
         (function () {
-            emailjs.init("_5OltJ1IQHainEfe4"); 
+            emailjs.init("_5OltJ1IQHainEfe4");
         })();
 
-        
+
     </script>
 
     <style>
@@ -71,12 +71,12 @@
             width: 100%;
             height: 100%;
             visibility: hidden;
-           
+
             transform: scale(0.3);
             opacity: 0;
-            transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94),transform 0.4s ease-in-out;
+            transition: opacity 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.4s ease-in-out;
         }
-       
+
 
         .container h2 {
             color: #f7b538;
@@ -178,7 +178,7 @@
     <header>
 
         <nav>
-           <div class="logo"> <a href="index.html"> <img src="Media/logo.png" alt=""></a></div>
+            <div class="logo"> <a href="index.html"> <img src="Media/logo.png" alt=""></a></div>
             <div class="humberger" id="humberger">
                 <span></span>
                 <span></span>
@@ -293,30 +293,67 @@
                 <textarea name="message" cols="30" rows="10" placeholder="Write Message" required></textarea>
                 <button type="submit">Send Message</button>
             </form>
-            
+
             <script type="text/javascript">
-                document.getElementById('contact-form').addEventListener('submit', function(event) {
+                document.getElementById('contact-form').addEventListener('submit', function (event) {
                     event.preventDefault(); // Prevent the form from submitting normally
-            
+
                     // Send form data via EmailJS
                     emailjs.sendForm('service_rurc8qc', 'template_fjsnu9d', this)
-                        .then(function() {
-                            alert('Message sent successfully!');
-                        }, function(error) {
-                            alert('Failed to send message. Error: ' + JSON.stringify(error));
+                        .then(function () {
+
+                            // Set the alert message
+                            document.getElementById('alert-message').innerText = "Message Successfully Sent!";
+
+                            // Display the alert
+                            document.getElementById('custom-alert').style.display = 'flex';
+
+                            // // Close the alert when clicking the close button or OK button
+                            document.getElementById('close-btn').onclick = function () {
+                                document.getElementById('custom-alert').style.display = 'none';
+                            };
+
+                            document.getElementById('confirmation').onclick = function () {
+                                document.getElementById('custom-alert').style.display = 'none';
+                            };
+                        }, function (error) {   /*Error Alert*/
+
+                            // Set the Error alert message
+                            document.getElementById('alert-message').innerText = "Failed to send message. Error:" + JSON.stringify(error);
+
+                            // Display the Error alert
+                            document.getElementById('custom-alert').style.display = 'flex';
+
+                            // // Close the alert when clicking the close button or OK button
+                            document.getElementById('close-btn').onclick = function () {
+                                document.getElementById('custom-alert').style.display = 'none';
+                            };
+
+                            document.getElementById('confirmation').onclick = function () {
+                                document.getElementById('custom-alert').style.display = 'none';
+                            };
+                           
                         });
                 });
             </script>
-
-
-
-
         </section>
     </main>
+
+
+
+
     <footer>
         <p>&copy; <span id="year"></span> WarishaMJ All Rights Reserved.</p>
         <a href="#"><img src="Media/arrow.png" class="animate__animated animate__fadeInUp"></a>
     </footer>
+
+    <div class="custom-alert" id="custom-alert">
+        <div class="custom-alert-content" id="custom-alert-content">
+            <span class="close-btn" id="close-btn">&times;</span>
+            <div class="alert-message" id="alert-message">This is alert message</div>
+            <button id="confirmation">Ok Button</button>
+        </div>
+    </div>
     <script src="modal.js"></script>
 
     <script src="close.js"></script>
